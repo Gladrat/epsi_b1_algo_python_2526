@@ -1,27 +1,22 @@
-# Déclarer un tableau pour stocker les notes
+# liste_notes = []
+# nb_note = int(input("Combien de notes voulez-vous saisir ? "))
 
-# Pour chaque note :
-    # Afficher un message demandant de saisir la note n°X
-    # Saisir la note
+# for i in range(nb_note):
+#     liste_notes.append(float(input("Nouvelle note: ")))
 
-# Utiliser une boucle pour saisir les 10 notes,
-# et les affecter dans le tableau
+# print("La moyenne est de :", sum(liste_notes) / len(liste_notes))
 
-# L'instruction input() ne doit apparaître qu'une fois dans l'algo
-# N'utiliser qu'une seule boucle pour tout l'algo
+continuer = "o"
+liste_notes = []
+note_max = int(input("Quelle est la note maximum de l'examen ? "))
 
-# Affichez la moyenne de la classe
+while continuer == "o":
+    note = float(input("Nouvelle note: "))
+    while note < 0 or note > note_max :
+        note = float(input(f"Veuillez corriger la note (entre 0 et {note_max}): "))
 
-# ---
+    liste_notes.append(note)
+    continuer = input("Voulez-vous saisir une nouvelle note ? (o/n) ")
 
-# Reprendre l'algorithme précédent
-# Dans l'algorithme précédent, le calcul de la moyenne de la classe pose un problème. Les 0 attribués en cas de triche ou d'absence biaisent la moyenne générale et masquent le niveau réel des élèves.
+print("La moyenne est de :", round(sum(liste_notes) / len(liste_notes), 2))
 
-# Afficher les messages suivants en fin de traitement :
-    # Nombre de note réel : 10
-    # Moyenne réelle : X
-    # Nombre de note optimisé : 7 (s'il y a 3 fois la note 0)
-    # Moyenne optimisée : X
-
-# A la toute fin de l'algorithme, supprimer les 0 du tableau des notes.
-# Où la **moyenne optimisée** ne comptabilise pas les notes égales à 0.
