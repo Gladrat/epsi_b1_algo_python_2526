@@ -19,4 +19,3 @@ while continuer == "o":
     continuer = input("Voulez-vous saisir une nouvelle note ? (o/n) ")
 
 print("La moyenne est de :", round(sum(liste_notes) / len(liste_notes), 2))
-
